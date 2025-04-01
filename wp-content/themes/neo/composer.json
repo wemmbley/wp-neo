@@ -1,0 +1,15 @@
+{
+    "name": "golev/neo",
+    "autoload": {
+        "psr-4": {
+            "Neo\\": "./"
+        },
+        "files": [
+            "framework/helpers.php"
+        ]
+    },
+    "require-dev": {
+        "symfony/var-dumper": "*",
+        "scssphp/scssphp": "2.0.1"
+    }
+}
