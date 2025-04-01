@@ -3,4 +3,5 @@
 !wp-content/
 !wp-content/themes/
 !wp-content/themes/neo/
-!wp-content/themes/neo/*
+!wp-content/themes/neo/**/*
+wp-content/themes/neo/vendor

@@ -1,0 +1,52 @@
+/* Контейнер для модалки и бэкдропа */
+.modal-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Высокий z-index для отображения поверх всего */
+    will-change: transform;
+    transform: translateZ(0);
+    transition: opacity 320ms ease;
+    backface-visibility: hidden;
+}
+
+/* Бэкдроп */
+.modal-wrapper:before {
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-gray-800);
+    opacity: 0.5; /* Можно настроить прозрачность */
+    z-index: -1;
+    position: fixed;
+    will-change: opacity;
+    transition: transform 320ms ease, opacity 320ms ease; /* Анимируем transform и opacity */
+}
+
+/* Сама модалка */
+.modal {
+    position: relative; /* Относительное позиционирование относительно wrapper */
+    box-shadow: var(--shadow-card-xxl);
+    background-color: var(--color-white);
+    z-index: 1001; /* Выше бэкдропа */
+    /* Дополнительные стили по желанию */
+    padding: 20px;
+    border-radius: 4px;
+    max-width: 90vw; /* Ограничение максимальной ширины */
+    max-height: 90vh; /* Ограничение максимальной высоты */
+    overflow: hidden; /* Прокрутка при необходимости */
+    transition: transform 320ms ease, opacity 320ms ease;
+    /*transform: scale(0.8);*/
+}
+.modal-closing {
+    opacity: 0 !important;
+    transition: opacity 320ms ease, transform 320ms ease;
+    transform: scale(1.2);
+}
